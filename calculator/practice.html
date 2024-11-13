@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript-1</title>
+</head>
+
+<body>
+    <input type="number" id="text1">
+    <input type="number" id="text2">
+    <button onclick="plus()">plus</button>
+    <button onclick="sub()">subtraction</button><br><br>
+    <p id="answer_ps"> answer is=</p>
+    <hr>
+
+    enter subject 1 marks <input type="text" id="sub1">
+    <br><br>
+    enter subject 2 marks <input type="text" id="sub2">
+    <br><br>
+    enter subject 3 marks <input type="text" id="sub3">
+    <br><br>
+    enter subject 4 marks <input type="text" id="sub4">
+    <br><br>
+    <p id="answer"></p>
+    <button onclick="mark()">get score</button><br><br>
+    <button onclick="even()">even number</button><BR><br>
+        <p id="even"></p>
+</body>
+<script>
+    alert('have nice day');
+    var name = "seema";//If you create a variable outside of a function, you can use it anywhere in your code.
+    console.log(name);
+    function name1() {
+        var id = 1;//If you create a variable inside a function, you can only use it within that function.
+        document.write(id);
+        let num = 3;
+        document.write("this is inside function let value is ", num)
+    }
+
+    name1();
+    let num = 1;//bock scop variable you not declare outside the block or function 
+
+    num = 2;
+    console.log('\n number  with let keyword', num)
+    const pi = 3.14;
+    console.log("constant value is ", pi);
+
+    let city = "kadi";//srting
+    console.log(city);
+
+    let no = 7890;
+    console.log(no);
+
+    let bool = true;
+    console.log(bool);
+
+    let a;
+    console.log(a);
+
+    let b = null;
+    console.log(b);
+
+    const age = { seema: 19, course: "bca" };
+    console.log(age);
+
+    function plus() {
+
+        let x = document.querySelector("#text1").value;
+        let y = document.querySelector("#text2").value;
+        let z = parseInt(x) + parseInt(y);
+        let ps=document.querySelector("#answer_ps");
+       ps.innerHTML="sum of two number is "+z;
+        console.log("sum=", z);
+    }
+    function sub() {
+        let x = document.querySelector("#text1").value;
+        let y = document.querySelector("#text2").value;
+        let z = Number(x) - Number(y);
+        let ps=document.querySelector("#answer_ps");
+       ps.innerHTML="subtraction of two number is "+z;
+        console.log("subtracation=", z);
+    }
+    let mark = () => {
+        let sub1 = document.querySelector("#sub1").value;
+        let sub2 = document.querySelector("#sub2").value;
+        let sub3 = document.querySelector("#sub3").value;
+        let sub4 = document.querySelector("#sub4").value;
+        console.log(sub1);
+        let per = (Number(sub1) + Number(sub2) + Number(sub3) + Number(sub4)) / 4;
+        console.log(per);
+        let answer = "";
+        if (per >= 90) {
+            answer = "A";
+        }
+        else if (per >= 80 && per <= 89) {
+            answer = "B";
+        }
+        else if (per >= 70 && per <= 79) {
+            answer = "C";
+        }
+        else {
+            answer = "D";
+        }
+        document.getElementById("answer").innerHTML = `your grade is ${answer}`;
+    }
+    mark();
+    // let area = () => {
+    //     let r;
+    //     let area = pi * r * r;
+    //     document.write("area of circle is ", area);
+    // }
+    // area();
+
+    let time = new Date().getDay();
+    console.log(time);
+    if (time == 1) {
+        document.write("\n today is monday");
+    }
+    else {
+        document.write("\n today is not monday");
+    }
+    switch (time) {
+        case 1:
+            document.write("\n today is monday");
+            break;
+        case 2:
+            document.write("\n today is tuesday");
+            break;
+        case 3:
+            document.write("\n today is wednessay");
+            break;
+
+        case 3:
+            document.write("\n today is thrusday");
+            break;
+        case 3:
+            document.write("\n today is friday");
+            break;
+        case 3:
+            document.write("\n today is saturday");
+            break;
+        default:
+            console.log("\n today is sunday");
+            break;
+    }
+    let even = () => {
+        let output = "";
+        for (let id = 0; id <= 100; id++) {
+            if (id % 2 == 0) {
+                output += id + "<br>";
+            }
+        }
+        document.querySelector("#even").innerHTML = output;
+    }
+   let student={
+        name:"seemadesai",
+        age:20,
+        grad:"a",
+    };
+    console.log(student);
+</script>
+
+</html>
